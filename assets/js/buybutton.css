@@ -62,14 +62,10 @@ input {
   overflow: hidden;
 }
 .shopify-buy__btn {
-  color: #fff;
   font-size: 15px;
-  background-color: #78b657;
   padding: 12px 40px;
   letter-spacing: .3px;
   display: block;
-  border-radius: 3px;
-  cursor: pointer;
   -webkit-transition: background 200ms ease;
   transition: background 200ms ease;
   max-width: 100%;
@@ -78,11 +74,28 @@ input {
   line-height: 1.2;
   border: 0;
   -moz-appearance: none;
-  -webkit-appearance: none
+  -webkit-appearance: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #fcc756;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcc756),to(#e6b13e));
+  background: linear-gradient(to bottom, #fcc756 0%,#e6b13e 100%);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3)
+
+
 }
 .shopify-buy__btn:hover,
   .shopify-buy__btn:focus {
-  background-color: #5f9d3e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6b13e), to(#fcc756));
+  background: linear-gradient(to bottom, #e6b13e 0%, #fcc756 100%);
 }
 .shopify-buy__btn--parent {
   background-color: transparent;
@@ -348,7 +361,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
 }
 .shopify-buy__product__actual-price {
-  font-size: 14px;
+  font-size: 19px;
 }
 .shopify-buy__product__compare-price {
   font-size: 12px;
@@ -968,9 +981,12 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
 }
 .shopify-buy__cart-toggle {
-  background-color: #78b657;
+
+  background: #fcc756;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcc756),to(#e6b13e));
+  background: linear-gradient(to bottom, #fcc756 0%,#e6b13e 100%);
   color: #fff;
-  border-radius: 3px 0 0 3px;;
+  border-radius: 8px;
   padding: 8px 10px;
   text-align: center;
   display: inline-block;
@@ -978,10 +994,14 @@ input[type=number]::-webkit-outer-spin-button {
   margin-right: 0;
   cursor: pointer;
   -webkit-transition: background 200ms ease;
-  transition: background 200ms ease
+  transition: background 200ms ease;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3)
 }
 .shopify-buy__cart-toggle:hover {
-  background-color: #5f9d3e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6b13e), to(#fcc756));
+  background: linear-gradient(to bottom, #e6b13e 0%, #fcc756 100%);
 }
 .shopify-buy__cart-toggle__count {
   font-size: 18px;
@@ -1042,6 +1062,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 15px;
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 50px;
 
   & + & {
     margin-top: 15px;
@@ -1051,7 +1072,6 @@ input[type=number]::-webkit-outer-spin-button {
   .shopify-buy__product {
     width: calc(25% - 20px);
     margin-left: 20px;
-    margin-bottom: 50px;
     & + & {
       margin-top: 0;
     }
@@ -1066,7 +1086,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .shopify-buy-modal-is-active {
   height: 100%;
-  overflow: auto;
+  overflow: visible;
 }
 .shopify-buy-frame {
   display: inline-block
