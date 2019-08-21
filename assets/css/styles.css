@@ -443,6 +443,36 @@ section{
 	line-height: 1.3em;
 }
 
+.sect21{
+    background: #6b4887 url(../img/discount_bg.jpg) 50% 0% no-repeat;
+    min-height: 1000px;
+    padding-top: 320px;
+}
+
+.sect21 .wrapper>p{
+    font-size: 23px;
+    line-height: 1.3em;
+    text-align: center;
+    margin: 0 0 30px;
+}
+.sect21 .wrapper>p>span{
+    display: block;
+    color: #32384e;
+    font-weight: 700;
+}
+.sect21 .content{
+    padding: 0 310px;
+}
+.sect21 .timer .timer_cont{
+    padding: 0 30px;
+}
+.sect21 .timer h3{
+    font-weight: 700;
+}
+.sect21 .button-m{
+    margin-top: 40px;
+}
+
 
 
 /*sect3*/
@@ -1045,6 +1075,25 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.
 	.sect7 .timer .timer_cont{
 		padding: 0 182px;
 	}
+
+
+
+
+    .sect21 .wrapper > p > span{
+        display: inline;
+    }
+    .sect21 .timer h3{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .sect21 .content{
+        padding: 0;
+    }
+    .sect21 .timer .timer_cont{
+        padding: 0 182px;
+    }
+
+
 	.sect8 .list_2{
 		padding-top: 40px;
 	}
@@ -1244,6 +1293,18 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.
 	.sect7 .timer h3{
 		font-size: 20px;
 	}
+
+    .sect21 .wrapper > p{
+        font-size: 20px;
+        line-height: 1.2em;
+    }
+    .sect21 .timer .timer_cont{
+        padding: 0 15px;
+    }
+    .sect21 .timer h3{
+        font-size: 20px;
+    }
+
 	.sect8{
 		padding: 40px 0;
 	}
