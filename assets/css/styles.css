@@ -520,6 +520,12 @@ section{
 .sect4 .content>img{
 	float: right;
 }
+
+.sect4 .content>iframe{
+    float: right;
+    width: 50%;
+}
+
 .sect4 .title{
 	margin-bottom: 50px;
 }
@@ -1031,7 +1037,15 @@ background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.
 		float: none;
 		display: block;
 		margin: 0px auto 30px;
-	}
+    }
+
+    .sect4 .content > iframe{
+        float: none;
+        display: block;
+        margin: 0px auto 30px;
+        width: 100%;
+    }
+
 	.sect4 .content .text{
 		padding: 0;
 	}
