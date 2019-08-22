@@ -9,10 +9,37 @@
     <link rel="icon" type="image/png" href="https://plexnum.github.io/love-pendant-landing/assets/favicon.png">
     <link rel="stylesheet" href="https://plexnum.github.io/love-pendant-landing/assets/css/reset.css">
     <link rel="stylesheet" href="https://plexnum.github.io/love-pendant-landing/assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://plexnum.github.io/love-pendant-landing/assets/css/styles.css">
     <script src="https://plexnum.github.io/love-pendant-landing/assets/js/buybutton.js"></script>
+
+
 </head>
 <body>
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2568454559834147');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=2568454559834147&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136701091-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-136701091-2');
+</script>
+
 <header class="offer_section ofr_sect">
     <div class="wrapper clearfix">
         <div class="title_block">
@@ -343,7 +370,7 @@
             (function () {
 
                 var client = ShopifyBuy.buildClient({
-                    domain: 'plexnum.myshopify.com',
+                    domain: '21dollarstore.com',
                     storefrontAccessToken: 'beaf00f12cdd56cb56ae4234aeffe118',
                 });
 
@@ -355,12 +382,34 @@
                     moneyFormat: '%24%7B%7Bamount%7D%7D',
                     options: {
 
-                        "toggle" : {
-                            "styles" : {
-                            }
-                        },
-
                         "product": {
+
+
+                            "events" : {
+
+                                openModal: function (product) {
+
+                                    var productId = ShopifyBuy.Base64.decode(product.model.id);
+                                    productId = productId.replace(/^.*\//g, '');
+
+                                    if(product.model.variants && product.model.variants.length) {
+
+                                        var firstVariant = product.model.variants[0];
+
+                                        fbq('track', 'ViewContent', {
+                                            content_ids: [productId],
+                                            content_type: 'product',
+                                            content_category: product.model.productType,
+                                            value: firstVariant.priceV2.amount,
+                                            currency: firstVariant.priceV2.currencyCode,
+                                            content_name: product.model.title
+                                        });
+
+                                    }
+
+                                },
+                            },
+
                             "layout": "vertical",
                             "buttonDestination": "modal",
                             "variantId": "all",
@@ -402,6 +451,32 @@
                         },
 
                         "modalProduct": {
+
+                            "events" : {
+                                addVariantToCart: function (product) {
+
+                                    var productId = ShopifyBuy.Base64.decode(product.model.id);
+                                    productId = productId.replace(/^.*\//g, '');
+
+                                    if(product.model.variants && product.model.variants.length) {
+
+                                        var firstVariant = product.model.variants[0];
+
+                                        fbq('track', 'AddToCart', {
+                                            content_ids: [productId],
+                                            content_type: 'product_group',
+                                            num_items: product.selectedQuantity,
+                                            content_category: product.model.productType,
+                                            value: firstVariant.priceV2.amount,
+                                            currency: firstVariant.priceV2.currencyCode,
+                                            content_name: product.model.title
+                                        });
+
+                                    }
+
+                                },
+                            },
+
                             "contents": {
                                 "img": false,
                                 "imgWithCarousel": true,
@@ -463,6 +538,7 @@
     </div>
 </section>
 
+
 <!-- scripts -->
 <script type="text/javascript" src="https://plexnum.github.io/love-pendant-landing/assets/js/check.js"></script>
 <script type="text/javascript" src="https://plexnum.github.io/love-pendant-landing/assets/js/detect.js?v=0.1"></script>
@@ -474,5 +550,7 @@
 <script src="https://plexnum.github.io/love-pendant-landing/assets/js/slick.min.js"></script>
 <script src="https://plexnum.github.io/love-pendant-landing/assets/js/scripts.js"></script>
 <!-- /scripts -->
+
+
 </body>
 </html>
